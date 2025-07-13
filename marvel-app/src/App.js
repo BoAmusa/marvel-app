@@ -12,9 +12,10 @@ export const App = () => {
     console.log("Searching for:", searchTerm);
 
     try {
-      const url = `https://marvel-api-gjhmghf8f0csaff9.canadacentral-01.azurewebsites.net/api/marvel?nameStartsWith=${encodeURIComponent(
+      const url = `https://marvel-api-gjhmghf8f0csaff9.canadacentral-01.azurewebsites.net/api/GetMarvelCharacters1?nameStartsWith=${encodeURIComponent(
         searchTerm
       )}`;
+
       const response = await fetch(url);
 
       console.log("response:", response);
