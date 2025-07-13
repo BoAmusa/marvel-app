@@ -2,8 +2,8 @@ const fetch = require("node-fetch");
 const md5 = require("md5");
 
 module.exports = async function (context, req) {
-  const publicKey = process.env.REACT_APP_MARVEL_API_KEY;
-  const privateKey = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
+  const publicKey = process.env.MARVEL_PUBLIC_KEY;
+  const privateKey = process.env.MARVEL_PRIVATE_KEY;
   const searchTerm = req.query.nameStartsWith || "Iron Man";
   const ts = Date.now().toString();
   const hash = md5(ts + privateKey + publicKey);
