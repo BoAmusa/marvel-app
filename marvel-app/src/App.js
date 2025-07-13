@@ -12,17 +12,10 @@ export const App = () => {
     console.log("Searching for:", searchTerm);
 
     try {
-      //const ts = Date.now().toString();
-      // const API_KEY = process.env.REACT_APP_MARVEL_API_KEY || "";
-      // const API_PRIVATE_KEY =
-      //   process.env.REACT_APP_MARVEL_API_PRIVATE_KEY || "";
-
-      // if (!API_KEY || !API_PRIVATE_KEY) {
-      //   throw new Error("Marvel API keys are not configured.");
-      // }
-      const response = await fetch(
-        `/api/marvel?nameStartsWith=${encodeURIComponent(searchTerm)}`
-      );
+      const url = `https://marvel-api-gjhmghf8f0csaff9.canadacentral-01.azurewebsites.net/api/marvel?nameStartsWith=${encodeURIComponent(
+        searchTerm
+      )}`;
+      const response = await fetch(url);
 
       console.log("response:", response);
       if (!response.ok) {
