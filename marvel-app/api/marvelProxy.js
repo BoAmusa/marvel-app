@@ -8,8 +8,8 @@ const app = express();
 app.use(cors());
 const PORT = 5000;
 
-const publicKey = process.env.MARVEL_PUBLIC_KEY;
-const privateKey = process.env.MARVEL_PRIVATE_KEY;
+const publicKey = process.env.REACT_APP_MARVEL_API_KEY;
+const privateKey = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
 
 app.get("/api/marvel", async (req, res) => {
   const { nameStartsWith } = req.query;
