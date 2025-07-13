@@ -13,21 +13,17 @@ export const App = () => {
     console.log("Searching for:", searchTerm);
 
     try {
-      const ts = Date.now().toString();
-      const API_KEY = process.env.REACT_APP_MARVEL_API_KEY || "";
-      const API_PRIVATE_KEY =
-        process.env.REACT_APP_MARVEL_API_PRIVATE_KEY || "";
+      //const ts = Date.now().toString();
+      // const API_KEY = process.env.REACT_APP_MARVEL_API_KEY || "";
+      // const API_PRIVATE_KEY =
+      //   process.env.REACT_APP_MARVEL_API_PRIVATE_KEY || "";
 
-      if (!API_KEY || !API_PRIVATE_KEY) {
-        throw new Error("Marvel API keys are not configured.");
-      }
-      const hash = md5(ts + API_PRIVATE_KEY + API_KEY);
-
-      const url = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${encodeURIComponent(
-        searchTerm
-      )}&limit=10&ts=${ts}&apikey=${API_KEY}&hash=${hash}`;
-
-      const response = await fetch(url);
+      // if (!API_KEY || !API_PRIVATE_KEY) {
+      //   throw new Error("Marvel API keys are not configured.");
+      // }
+      const response = await fetch(
+        `/api/marvel?nameStartsWith=${encodeURIComponent(searchTerm)}`
+      );
 
       console.log("response:", response);
       if (!response.ok) {
