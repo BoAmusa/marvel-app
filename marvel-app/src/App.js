@@ -1,6 +1,4 @@
 import './App.css';
-// import marvelBackground from './images/marvelBackground.jpg';
-// import avengersA from './images/avengersA.jpg';
 import avengersBackground from './images/avengersBackground.jpg';
 import MarvelSearchC from './components/MarvelSearch';
 import * as React from  'react';
