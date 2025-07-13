@@ -2,7 +2,6 @@ import "./App.css";
 import avengersBackground from "./images/avengersBackground.jpg";
 import MarvelSearchC from "./components/MarvelSearch";
 import * as React from "react";
-import md5 from "md5";
 
 export const App = () => {
   const [searchResults, setSearchResults] = React.useState([]);
