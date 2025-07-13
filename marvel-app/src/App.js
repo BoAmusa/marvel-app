@@ -51,7 +51,7 @@ export const App = () => {
       {/* Display search results */}
       {loading && (
         <div className="loading-container">
-          <p>Loading Marvel characters...</p>
+          <p>Loading Marvel characters....</p>
         </div>
       )}
       
